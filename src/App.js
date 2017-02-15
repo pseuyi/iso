@@ -1,18 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import Left from './components/Left'
+import Right from './components/Right'
+import Spine from './components/Spine'
 
 class App extends Component {
+  constructor () {
+    super()
+    this.state = {
+      text: ''
+    }
+    this.write = this.write.bind(this)
+  }
+  write (text) {
+    this.setState({text})
+  }
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="App row">
+        <Left text={this.state.text} write={this.write}/>
+        <Spine />
+        <Right text={this.state.text} write={this.write}/>
       </div>
     );
   }
