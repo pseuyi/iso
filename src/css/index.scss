@@ -26,6 +26,14 @@ body {
   line-height: 1.6em;
   font-size: 1.6em;
 }
+.marked {
+  padding: 10em;
+  box-sizing: border-box;
+  border: $border;
+  width: 100%;
+  height: 50%;
+  background: $nu;
+}
 
 h1 {
   font-size: 3em;

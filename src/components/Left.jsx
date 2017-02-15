@@ -8,12 +8,10 @@ export default class extends Component {
     this.clearContents = this.clearContents.bind(this)
   }
   clearContents () {
-    console.log('clearcontent this', this)
     this.value = 'nothing'
   }
   handleChange (e) {
     this.props.write(e.target.value)
-    console.log('this.props.text', this.props.text)
   }
   render () {
     return (
@@ -21,7 +19,7 @@ export default class extends Component {
         col-sm-6
         col-md-6
         col-lg-6'>
-        <textarea name="text" defaultValue='type something _' onFocus={this.clearContents} onChange={this.handleChange} />
+        <textarea name="text" defaultValue='start typing in markdown _' onFocus={this.clearContents} onChange={this.handleChange} />
       </div>
     )
   }
