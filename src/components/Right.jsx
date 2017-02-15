@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import marked from 'marked'
 
 export default class extends Component {
   render () {
@@ -9,7 +10,7 @@ export default class extends Component {
         col-md-6
         col-lg-6
         '>
-        <textarea name="text" value={this.props.text} />
+        <textarea name="text" value={marked(this.props.text)} />
       </div>
     )
   }
