@@ -12,10 +12,10 @@ export default class extends Component {
         col-md-6
         col-lg-6
         '>
-        <div className='marked'>
+        <div className='marked-top'>
           {marked(this.props.text)}
         </div>
-        <div className='marked'>
+        <div className='marked-bottom'>
           <ReactMarkdown source={this.props.text} />
         </div>
       </div>

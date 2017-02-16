@@ -17,13 +17,23 @@ body {
   line-height: 1.6em;
   font-size: 1.6em; }
 
-.marked {
+.marked-top {
   padding: 10em;
   box-sizing: border-box;
   border: solid 2px black;
   width: 100%;
   height: 50%;
   background: #f7f2e6; }
+
+.marked-bottom {
+  padding: 10em;
+  box-sizing: border-box;
+  width: 100%;
+  height: 50%;
+  background: #f7f2e6;
+  border-right: solid 2px black;
+  border-left: solid 2px black;
+  border-bottom: solid 2px black; }
 
 h1 {
   font-size: 3em; }
@@ -43,18 +53,19 @@ h1 {
   left: 0;
   width: 100%;
   padding: 0; }
-  #left textarea {
-    font-family: "Open Sans", sans-serif; }
+
+#left textarea {
+  font-family: "Open Sans", sans-serif; }
 
 #right {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
-  border: solid 2px black;
   width: 100%; }
-  #right textarea {
-    font-family: "Petit Formal Script", cursive; }
+
+#right textarea {
+  font-family: "Petit Formal Script", cursive; }
 
 #spine {
   background: #f2ead7;
