@@ -19,7 +19,12 @@ export default class extends Component {
         col-sm-6
         col-md-6
         col-lg-6'>
-        <textarea name="text" defaultValue='start typing in markdown _' onFocus={this.clearContents} onChange={this.handleChange} />
+        <textarea name="text" defaultValue='start typing in markdown_
+blahblahblah
+# header
+- list
+- list item 2
+' onFocus={this.clearContents} onChange={this.handleChange} />
       </div>
     )
   }

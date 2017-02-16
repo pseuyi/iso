@@ -17,7 +17,7 @@ body {
 }
 
 %full-text {
-  padding: 10em;
+  padding: 4em;
   box-sizing: border-box;
   border: $border;
   width: 100%;
@@ -27,15 +27,18 @@ body {
   font-size: 1.6em;
 }
 .marked-top {
-  padding: 10em;
+  font-family: $f;
+  padding: 4em;
   box-sizing: border-box;
   border: $border;
   width: 100%;
   height: 50%;
   background: $nu;
+  text-align: left;
 }
 .marked-bottom {
-  padding: 10em;
+  font-family: $f;
+  padding: 4em;
   box-sizing: border-box;
   width: 100%;
   height: 50%;
@@ -43,6 +46,7 @@ body {
   border-right: $border;
   border-left: $border;
   border-bottom: $border;
+  text-align: left;
 }
 
 h1 {
