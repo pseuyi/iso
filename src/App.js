@@ -9,7 +9,7 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      text: 'blahblahblah' +'\n' + '# header' + '\n' + '- list' + '\n' + '- list item 2'
+      text: '# start typing in markdown_ \n## __header__ \n1. words \n2. more *words*'
     }
     this.write = this.write.bind(this)
   }

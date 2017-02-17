@@ -8,7 +8,7 @@ body {
   height: 100%; }
 
 #left textarea, #right textarea {
-  padding: 4em;
+  padding: 4em 0 0 8em;
   box-sizing: border-box;
   border: solid 1px black;
   width: 100%;

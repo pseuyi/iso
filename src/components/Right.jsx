@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 import marked from 'marked'
 import ReactMarkdown from 'react-markdown'
 
@@ -12,7 +11,7 @@ export default class extends Component {
         col-lg-6
         '>
         <div className='marked-top'>
-          <pre>{process(marked(this.props.text))}</pre>
+          <pre>{prettify(marked(this.props.text))}</pre>
         </div>
         <div className='marked-bottom'>
           <ReactMarkdown source={this.props.text} />
@@ -22,32 +21,28 @@ export default class extends Component {
   }
 }
 
-function process(str) {
-
-    var div = document.createElement('div');
-    div.innerHTML = str.trim();
-
-    return format(div, 0).innerHTML;
+function prettify(str) {
+    let temp = document.createElement('div')
+    temp.innerHTML = str.trim()
+    return format(temp, 0).innerHTML
 }
 
-function format(node, level) {
+function format (node, level) {
 
-    var indentBefore = new Array(level++ + 1).join('  '),
-        indentAfter  = new Array(level - 1).join('  '),
-        textNode;
-
-    for (var i = 0; i < node.children.length; i++) {
-
-        textNode = document.createTextNode('\n' + indentBefore);
-        node.insertBefore(textNode, node.children[i]);
-
-        format(node.children[i], level);
-
-        if (node.lastElementChild == node.children[i]) {
-            textNode = document.createTextNode('\n' + indentAfter);
-            node.appendChild(textNode);
-        }
+  let indent = '\n'
+  for(var j=level; j>0; j--) {
+    indent += ' '
+  }
+  // console.log('the current level', level)
+  // console.log('formatting', node)
+  for (var i = 0; i< node.children.length; i++) {
+    let textnode = document.createTextNode(indent)
+    node.insertBefore(textnode, node.children[i])
+    format(node.children[i], level+1)
+    if (i===node.children.length-1) {
+      let last = document.createTextNode(indent.slice(0, indent.length-1))
+      node.appendChild(last)
     }
-
-    return node;
+  }
+  return node
 }

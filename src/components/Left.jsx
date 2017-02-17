@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
 export default class extends Component {
   constructor () {
@@ -19,11 +19,10 @@ export default class extends Component {
         col-sm-6
         col-md-6
         col-lg-6'>
-        <textarea name="text" defaultValue='start typing in markdown_
-blahblahblah
-# header
-- list
-- list item 2
+        <textarea name="text" defaultValue='# start typing in markdown_
+## __header__
+1. words
+2. more *words*
 ' onFocus={this.clearContents} onChange={this.handleChange} />
       </div>
     )
