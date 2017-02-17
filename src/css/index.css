@@ -7,6 +7,9 @@ body {
   display: block;
   height: 100%; }
 
+h1 {
+  font-size: 3em; }
+
 #left textarea, #right textarea {
   padding: 4em 0 0 8em;
   box-sizing: border-box;
@@ -39,9 +42,6 @@ body {
   border-bottom: solid 1px black;
   text-align: left; }
 
-h1 {
-  font-size: 3em; }
-
 .vertical-text {
   padding: 0.3em 0;
   margin: 3em 0;
@@ -49,6 +49,15 @@ h1 {
   width: 100%;
   float: left;
   transform: rotate(90deg); }
+
+#nav {
+  position: absolute;
+  top: 2em;
+  left: 0.6em;
+  z-index: 100; }
+
+#nav img {
+  width: 40%; }
 
 #left {
   position: absolute;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
+import Nav from './components/Nav'
 import Left from './components/Left'
 import Right from './components/Right'
 import Spine from './components/Spine'
@@ -20,6 +21,7 @@ class App extends Component {
   render() {
     return (
       <div className="App row">
+        <Nav />
         <Left text={this.state.text} write={this.write}/>
         <Spine />
         <Right text={this.state.text} write={this.write}/>
