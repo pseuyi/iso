@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
 import marked from 'marked'
 import ReactMarkdown from 'react-markdown'
 
-export default class extends Component {
+class Right extends Component {
+
   render () {
+    var input = '# This is a header\n\nAnd this is a paragraph';
     return (
       <div id='right' className='col-xs-6
         col-sm-6
@@ -46,3 +50,9 @@ function format (node, level) {
   }
   return node
 }
+
+const mapState = state => ({ text: state.text })
+// const mapDispatch = dispatch => ({
+// 	write: text => dispatch(setText(text))
+// })
+export default connect(mapState, null)(Right)

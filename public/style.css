@@ -52,12 +52,13 @@ h1 {
 
 #nav {
   position: absolute;
-  top: 2em;
-  left: 0.6em;
+  top: 1.4em;
+  left: 1.4em;
   z-index: 100; }
-
-#nav img {
-  width: 40%; }
+  #nav img {
+    display: block;
+    width: 30px;
+    margin-bottom: 1.6em; }
 
 #left {
   position: absolute;
@@ -66,19 +67,17 @@ h1 {
   left: 0;
   width: 100%;
   padding: 0; }
-
-#left textarea {
-  font-family: "Open Sans", sans-serif; }
+  #left textarea {
+    font-family: "Open Sans", sans-serif; }
 
 #right {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
-  width: 100%; }
-
-#right textarea {
-  font-family: "Petit Formal Script", cursive; }
+  width: 49%; }
+  #right textarea {
+    font-family: "Petit Formal Script", cursive; }
 
 #spine {
   background: #f2ead7;
