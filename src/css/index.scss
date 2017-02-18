@@ -60,12 +60,14 @@ h1 {
 }
 #nav {
   position: absolute;
-  top: 2em;
-  left: 0.6em;
+  top: 1.4em;
+  left: 1.4em;
   // border: solid 1px red;
   z-index: 100;
   img {
-    width: 40%;
+    display: block;
+    width: 30px;
+    margin-bottom: 1.6em;
   }
 }
 #left {
@@ -86,6 +88,7 @@ h1 {
   bottom: 0;
   right: 0;
   width: 100%;
+  border: solid 3px red;
   textarea {
     @extend %full-text;
     font-family: $flashy;
