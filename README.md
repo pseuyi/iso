@@ -1,4 +1,0 @@
-# todos
-
-scrolling
-list formatting
