@@ -52,12 +52,14 @@ h1 {
 
 #nav {
   position: absolute;
-  top: 2em;
-  left: 0.6em;
+  top: 1.4em;
+  left: 1.4em;
   z-index: 100; }
 
 #nav img {
-  width: 40%; }
+  display: block;
+  width: 30px;
+  margin-bottom: 1.6em; }
 
 #left {
   position: absolute;

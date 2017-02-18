@@ -1,17 +1,15 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
+import { setText } from '../redux/root-reducer'
 
-export default class extends Component {
+class Left extends Component {
   constructor () {
     super()
     this.handleChange = this.handleChange.bind(this)
-    this.clearContents = this.clearContents.bind(this)
-  }
-  clearContents () {
-    this.value = 'nothing'
   }
   handleChange (e) {
     this.props.write(e.target.value)
+    // console.log('this.props.text from mapped state', this.props)
   }
   render () {
     return (
@@ -21,18 +19,18 @@ export default class extends Component {
         col-lg-6'>
         <textarea name="text" defaultValue='# start typing in markdown_
 ## __header__
+___
+#### sub-header
 1. words
 2. more *words*
-' onFocus={this.clearContents} onChange={this.handleChange} />
+'       onChange={this.handleChange} />
       </div>
     )
   }
 }
-// const mapState = (state) => (state)
-// const mapDispatch = dispatch => ({
-// 	login: credentials => {
-// 		dispatch(setUser(credentials));
-// 		browserHistory.push('/');
-// 	}
-// })
-// export default connect(mapState, mapDispatch)(Left);
+
+const mapState = state => ({ text: state.text })
+const mapDispatch = dispatch => ({
+	write: text => dispatch(setText(text))
+})
+export default connect(mapState, mapDispatch)(Left)
