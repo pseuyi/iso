@@ -1,0 +1,52 @@
+{
+  "name": "iso",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev": "webpack-dev-server --port 4444 --inline --content-base public --history-api-fallback",
+    "start:prod": "webpack && node app/server.js",
+    "build": "webpack -w",
+    "build-css": "node-sass -w app/sass -o public/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pseuyi/iso.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pseuyi/iso/issues"
+  },
+  "dependencies": {
+    "compression": "^1.6.2",
+    "express": "^4.14.1",
+    "if-env": "^1.0.0",
+    "json-loader": "^0.5.4",
+    "marked": "^0.3.6",
+    "node-sass": "^4.5.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-markdown": "^2.4.4",
+    "react-redux": "^5.0.2",
+    "react-router": "^2.0.0",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.8.1",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.5.1",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.26.1",
+    "http-server": "^0.8.5",
+    "sass-loader": "^5.0.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "homepage": "https://github.com/pseuyi/iso#readme"
+}
