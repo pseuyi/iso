@@ -15,7 +15,6 @@ module.exports = {
       new webpack.optimize.OccurrenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin()
     ] : [],
-    exclude: /(node_modules|bower_components)/,
     loaders: [
       {
         test: /\.js$/, exclude: /node_modules/,
@@ -23,7 +22,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
+        loaders: ["style-loader", "css-loader", "sass-loader"]
       },
       {
         test: /\.json$/,

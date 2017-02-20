@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setText } from '../redux/root-reducer'
+import { setText } from '../redux/text'
 
 class Left extends Component {
   constructor () {
@@ -9,7 +9,6 @@ class Left extends Component {
   }
   handleChange (e) {
     this.props.write(e.target.value)
-    // console.log('this.props.text from mapped state', this.props)
   }
   render () {
     return (
