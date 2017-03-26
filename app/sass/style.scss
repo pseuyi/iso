@@ -1,7 +1,8 @@
 $turq: #217596;
-$nu: #f7f2e6;
+$nude: #f7f2e6;
+$yello: #f4e23d;
 
-$border: solid 1px black;
+$border: 1px solid black;
 $ff: 'Archivo Black', sans-serif;
 $f: 'Open Sans', sans-serif;
 $flashy: 'Petit Formal Script', cursive;
@@ -11,12 +12,19 @@ body {
   padding: 0;
   font-family: $ff;
   font-size: 10px;
-  background: $nu;
-  display:block;
+  background: $nude;
+  display: block;
   height:100%;
 }
 h1 {
   font-size: 3em;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: $yello;
 }
 %full-text {
   padding: 4em 0 0 8em;
@@ -24,7 +32,7 @@ h1 {
   border: $border;
   width: 100%;
   height: 100%;
-  background: $nu;
+  background: $nude;
   line-height: 1.6em;
   font-size: 1.6em;
 }
@@ -35,7 +43,7 @@ h1 {
   border: $border;
   width: 100%;
   height: 50%;
-  background: $nu;
+  background: $nude;
   text-align: left;
 }
 .marked-bottom {
@@ -44,7 +52,7 @@ h1 {
   box-sizing: border-box;
   width: 100%;
   height: 50%;
-  background: $nu;
+  background: $nude;
   border-right: $border;
   border-left: $border;
   border-bottom: $border;
@@ -69,6 +77,9 @@ h1 {
     width: 30px;
     margin-bottom: 1.6em;
   }
+  img:hover {
+    cursor: pointer;
+  }
 }
 #left {
   position: absolute;
@@ -92,9 +103,10 @@ h1 {
     @extend %full-text;
     font-family: $flashy;
   }
+  padding-right: 0;
 }
 #spine {
-  background: darken($nu, 4%);
+  background: darken($nude, 4%);
   z-index: 100;
   position: absolute;
   top: 0;
@@ -105,4 +117,32 @@ h1 {
   margin-right: auto;
   width: 40px;
   border: $border;
+}
+#login,
+#signup {
+  padding: 4em 8em;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 1.6em;
+  color: black;
+  input, button {
+    float: right;
+    display: block;
+  }
+  .centered {
+    text-align: center;
+  }
+  a {
+    background: black;
+    color: $nude;
+    //border-bottom: 3px solid $yello;
+  }
+  a:hover {
+    color: $yello;
+    background: none;
+  }
 }

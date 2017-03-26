@@ -2,7 +2,7 @@
 
 var router = require('express').Router();
 
-var HttpError = require('../utils/HttpError');
+var HttpError = require('../api/HttpError');
 
 router.use(HttpError(404).middleware());
 

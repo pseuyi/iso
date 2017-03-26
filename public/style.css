@@ -10,10 +10,17 @@ body {
 h1 {
   font-size: 3em; }
 
+a {
+  color: black;
+  text-decoration: none; }
+
+a:hover {
+  color: #f4e23d; }
+
 #left textarea, #right textarea {
   padding: 4em 0 0 8em;
   box-sizing: border-box;
-  border: solid 1px black;
+  border: 1px solid black;
   width: 100%;
   height: 100%;
   background: #f7f2e6;
@@ -24,7 +31,7 @@ h1 {
   font-family: "Open Sans", sans-serif;
   padding: 4em;
   box-sizing: border-box;
-  border: solid 1px black;
+  border: 1px solid black;
   width: 100%;
   height: 50%;
   background: #f7f2e6;
@@ -37,9 +44,9 @@ h1 {
   width: 100%;
   height: 50%;
   background: #f7f2e6;
-  border-right: solid 1px black;
-  border-left: solid 1px black;
-  border-bottom: solid 1px black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
   text-align: left; }
 
 .vertical-text {
@@ -59,6 +66,8 @@ h1 {
     display: block;
     width: 30px;
     margin-bottom: 1.6em; }
+  #nav img:hover {
+    cursor: pointer; }
 
 #left {
   position: absolute;
@@ -75,7 +84,8 @@ h1 {
   top: 0;
   bottom: 0;
   right: 0;
-  width: 100%; }
+  width: 100%;
+  padding-right: 0; }
   #right textarea {
     font-family: "Petit Formal Script", cursive; }
 
@@ -90,4 +100,32 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   width: 40px;
-  border: solid 1px black; }
+  border: 1px solid black; }
+
+#login,
+#signup {
+  padding: 4em 8em;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 1.6em;
+  color: black; }
+  #login input, #login button,
+  #signup input,
+  #signup button {
+    float: right;
+    display: block; }
+  #login .centered,
+  #signup .centered {
+    text-align: center; }
+  #login a,
+  #signup a {
+    background: black;
+    color: #f7f2e6; }
+  #login a:hover,
+  #signup a:hover {
+    color: #f4e23d;
+    background: none; }

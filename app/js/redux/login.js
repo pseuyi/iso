@@ -40,5 +40,5 @@ export const getUser = () => dispatch => {
 export const logout = () => dispatch => {
   dispatch(reset())
   axios.get('/auth/logout')
-     .catch(err => console.error('logout unsuccesful', err))
+     .catch(err => console.error('logout unsuccessful', err))
 }

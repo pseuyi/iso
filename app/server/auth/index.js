@@ -1,12 +1,12 @@
 'use strict'
 
-var router = require('express').Router()
-var session = require('express-session')
-var User = require('../api/users/user.model')
-var passport = require('passport')
+const router = require('express').Router()
+const session = require('express-session')
+const User = require('../api/users/user.model')
+const passport = require('passport')
 
 router.get('/me', function (req, res, next) {
-  // console.log('in the me route', req.session.userId)
+  console.log('in the me route', req.session.userId)
   let id = req.session.userId
   if (id) {
     User.findById(id)
@@ -49,11 +49,11 @@ router.post('/signup', function (req, res, next) {
 })
 
 // auth/google
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 passport.use(
   new GoogleStrategy({
-    clientID: '582139932347-8neg2cpi33kai9t5ufvrbj42l1mtanlk.apps.googleusercontent.com',
-    clientSecret: 'urz0iYAVdwt-oS5NXw685D0d',
+    clientID: process.env.CLIENT_ID || '',
+    clientSecret: process.env.CLIENT_SECRET | '',
     callbackURL: '/auth/google/callback'
   },
   // Google will send back the token and profile
@@ -61,7 +61,7 @@ passport.use(
     // the callback will pass back user profile information and each service (Facebook, Twitter, and Google) will pass it back a different way. Passport standardizes the information that comes back in its profile object.
     console.log('---', 'in verification callback', profile, '---')
 
-    var info = {
+    const info = {
       name: profile.displayName,
       email: profile.emails[0].value,
       photo: profile.photos ? profile.photos[0].value : undefined

@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
-import Nav from './components/Nav'
-import Left from './components/Left'
-import Spine from './components/Spine'
-import Right from './components/Right'
+import Nav from './Nav'
+import Spine from './Spine'
+import Right from './Right'
 
 export default class extends Component {
   render() {
     return (
       <div className="App row">
         <Nav />
-        <Left />
+        {this.props.children}
         <Spine />
         <Right />
       </div>

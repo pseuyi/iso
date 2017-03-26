@@ -1,12 +1,13 @@
 'use strict'
+var Sequelize = require('sequelize')
+var databaseURI = 'postgres://localhost:5432/iso'
 
-const Sequelize = require('sequelize')
-const databaseURI = 'postgres://localhost:5432/iso'
-
-export default new Sequelize(databaseURI, {
+var db = new Sequelize(databaseURI, {
     define: {
         timestamps: false,
         underscored: true
     },
     logging: false
 })
+
+module.exports = db

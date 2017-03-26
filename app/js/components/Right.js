@@ -6,10 +6,10 @@ import ReactMarkdown from 'react-markdown'
 import spruce from '../utils'
 
 class Right extends Component {
-
   render () {
-    console.log('this.props.text', this.props)
     // var input = '# This is a header\n\nAnd this is a paragraph';
+    const { page } = this.props
+    const text = page? '' : this.props.text
     return (
       <div id='right' className='col-xs-6
         col-sm-6
@@ -17,10 +17,10 @@ class Right extends Component {
         col-lg-6
         '>
         <div className='marked-top'>
-          <pre>{spruce(marked(this.props.text))}</pre>
+          <pre>{spruce(marked(text))}</pre>
         </div>
         <div className='marked-bottom'>
-          <ReactMarkdown source={this.props.text} />
+          <ReactMarkdown source={text} />
         </div>
       </div>
     )
