@@ -13,9 +13,10 @@ router.get('/me', function (req, res, next) {
     .then(user=>{
       res.send(user)
     })
-  } else {
-    res.sendStatus(401)
   }
+  // else {
+  //   res.sendStatus(401)
+  // }
 })
 
 router.get('/logout', function (req, res, next) {
@@ -52,8 +53,8 @@ router.post('/signup', function (req, res, next) {
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 passport.use(
   new GoogleStrategy({
-    clientID: process.env.CLIENT_ID || '',
-    clientSecret: process.env.CLIENT_SECRET | '',
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
     callbackURL: '/auth/google/callback'
   },
   // Google will send back the token and profile
